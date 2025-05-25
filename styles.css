@@ -1,0 +1,1015 @@
+/* Global Styles - Material Design 3 (M3) Theme */
+:root {
+    /* Primary colors */
+    --md-primary: #6750A4;
+    --md-on-primary: #FFFFFF;
+    --md-primary-container: #EADDFF;
+    --md-on-primary-container: #21005E;
+
+    /* Secondary colors */
+    --md-secondary: #625B71;
+    --md-on-secondary: #FFFFFF;
+    --md-secondary-container: #E8DEF8;
+    --md-on-secondary-container: #1E192B;
+
+    /* Tertiary colors */
+    --md-tertiary: #7D5260;
+    --md-on-tertiary: #FFFFFF;
+    --md-tertiary-container: #FFD8E4;
+    --md-on-tertiary-container: #370B1E;
+
+    /* Surface colors */
+    --md-surface: #FFFBFE;
+    --md-on-surface: #1C1B1F;
+    --md-surface-variant: #E7E0EC;
+    --md-on-surface-variant: #49454E;
+
+    /* Background colors */
+    --md-background: #FFFBFE;
+    --md-on-background: #1C1B1F;
+
+    /* Error colors */
+    --md-error: #B3261E;
+    --md-on-error: #FFFFFF;
+    --md-error-container: #F9DEDC;
+    --md-on-error-container: #410E0B;
+
+    /* Outline colors */
+    --md-outline: #79747E;
+    --md-outline-variant: #C4C7C5;
+
+    /* Shadow colors */
+    --md-shadow: #000000;
+
+    /* Surface tint color */
+    --md-surface-tint: #6750A4;
+
+    /* Inverse colors */
+    --md-inverse-surface: #313033;
+    --md-inverse-on-surface: #F4EFF4;
+    --md-inverse-primary: #D0BCFF;
+
+    /* Legacy variables for compatibility */
+    --primary-color: var(--md-primary);
+    --primary-light: var(--md-primary-container);
+    --primary-dark: var(--md-on-primary-container);
+    --secondary-color: var(--md-secondary);
+    --secondary-light: var(--md-secondary-container);
+    --secondary-dark: var(--md-on-secondary-container);
+    --background-dark: var(--md-background);
+    --background-light: var(--md-surface);
+    --text-primary: var(--md-on-surface);
+    --text-secondary: var(--md-on-surface-variant);
+    --accent-color: var(--md-tertiary);
+
+    /* Elevation and shape */
+    --md-elevation-level1: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.14);
+    --md-elevation-level2: 0 3px 6px 0 rgba(0, 0, 0, 0.15), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    --md-elevation-level3: 0 10px 20px 0 rgba(0, 0, 0, 0.15), 0 3px 6px 0 rgba(0, 0, 0, 0.10);
+    --md-elevation-level4: 0 15px 25px 0 rgba(0, 0, 0, 0.15), 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+    --md-elevation-level5: 0 20px 40px 0 rgba(0, 0, 0, 0.2);
+
+    --border-radius: 16px;
+    --border-radius-small: 8px;
+    --border-radius-large: 28px;
+    --box-shadow: var(--md-elevation-level1);
+    --transition-speed: 0.3s;
+
+    /* Complementary colors (mapped to M3) */
+    --complement-primary: var(--md-tertiary);
+    --complement-primary-light: var(--md-tertiary-container);
+    --complement-secondary: var(--md-primary);
+    --complement-secondary-light: var(--md-primary-container);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--md-on-background);
+    background-color: var(--md-background);
+    padding: 20px;
+    transition: background-color var(--transition-speed);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--md-surface);
+    box-shadow: var(--md-elevation-level1);
+    border-radius: var(--border-radius-large);
+    overflow: hidden;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--md-elevation-level3);
+}
+
+/* Typography - Material Design 3 */
+h1, h2, h3 {
+    color: var(--md-on-surface);
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: var(--md-primary);
+    border-radius: var(--border-radius-small);
+}
+
+p {
+    margin-bottom: 16px;
+    color: var(--md-on-surface-variant);
+}
+
+a {
+    color: var(--md-primary);
+    text-decoration: none;
+    transition: all var(--transition-speed);
+    position: relative;
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--md-tertiary);
+    text-decoration: none;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--md-tertiary);
+    transition: width var(--transition-speed);
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+section {
+    padding: 32px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--md-outline-variant);
+    transition: background-color var(--transition-speed);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header Styles - Material Design 3 */
+header {
+    background: var(--md-primary-container);
+    color: var(--md-on-primary-container);
+    padding: 48px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+}
+
+.profile-img-container {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--md-primary);
+    box-shadow: var(--md-elevation-level2);
+    position: relative;
+    z-index: 2;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.profile-img-container:hover {
+    transform: scale(1.05);
+    box-shadow: var(--md-elevation-level3);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed);
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(103, 80, 164, 0.2), transparent 70%);
+    z-index: 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    color: var(--md-on-primary-container);
+    position: relative;
+    z-index: 1;
+}
+
+header .title {
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+    font-weight: 400;
+    color: var(--md-on-primary-container);
+    opacity: 0.8;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.5px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    color: var(--md-on-primary-container);
+    opacity: 0.8;
+    transition: all var(--transition-speed);
+    padding: 8px 16px;
+    border-radius: var(--border-radius-small);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.contact-info p:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: var(--md-elevation-level1);
+}
+
+/* Navigation Styles - Material Design 3 */
+.resume-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+/* PDF Button Styles - Material Design 3 */
+.pdf-button-container {
+    margin-top: 24px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.pdf-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: var(--md-tertiary-container);
+    color: var(--md-on-tertiary-container);
+    border: none;
+    border-radius: var(--border-radius-small);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    box-shadow: var(--md-elevation-level1);
+    position: relative;
+    overflow: hidden;
+}
+
+.pdf-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--md-elevation-level2);
+    background-color: var(--md-tertiary);
+    color: var(--md-on-tertiary);
+}
+
+.pdf-button:active {
+    transform: translateY(-1px);
+    box-shadow: var(--md-elevation-level1);
+}
+
+.pdf-button .material-icons {
+    margin-right: 8px;
+    font-size: 1.25rem;
+}
+
+.resume-nav a {
+    color: var(--md-on-tertiary);
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: var(--border-radius-small);
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.1px;
+    text-transform: uppercase;
+    transition: all var(--transition-speed);
+    background-color: var(--complement-primary);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--md-elevation-level1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+}
+
+.resume-nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: background-color var(--transition-speed);
+}
+
+.resume-nav a:hover {
+    box-shadow: var(--md-elevation-level2);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.resume-nav a:hover::before {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.resume-nav a:active {
+    transform: translateY(0);
+    box-shadow: var(--md-elevation-level1);
+}
+
+.resume-nav a::after {
+    display: none;
+}
+
+.resume-nav a .material-icons {
+    color: var(--md-on-tertiary);
+}
+
+.material-icons {
+    margin-right: 8px;
+    position: relative;
+    font-size: 1.25rem;
+    color: var(--md-on-primary);
+    vertical-align: middle;
+}
+
+/* Summary Section - Material Design 3 */
+.summary {
+    background-color: var(--md-surface-variant);
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-small);
+    margin-top: 16px;
+}
+
+.summary::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, var(--md-primary) 0%, transparent 70%);
+    opacity: 0.1;
+    border-radius: 50%;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 4px solid var(--md-primary);
+    padding: 16px 24px;
+    margin: 24px 0;
+    font-size: 1.125rem;
+    background-color: var(--md-surface);
+    border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+    position: relative;
+    transition: all var(--transition-speed);
+    color: var(--md-on-surface-variant);
+    box-shadow: var(--md-elevation-level1);
+}
+
+blockquote:hover {
+    transform: translateX(5px);
+    color: var(--md-on-surface);
+    box-shadow: var(--md-elevation-level2);
+}
+
+/* Skills Section - Material Design 3 */
+.skill-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 16px;
+    border-radius: var(--border-radius-small);
+    transition: all var(--transition-speed);
+    background-color: var(--md-surface);
+    box-shadow: var(--md-elevation-level1);
+}
+
+.skill-item:hover {
+    background-color: var(--md-surface-variant);
+    transform: translateX(5px);
+    box-shadow: var(--md-elevation-level2);
+}
+
+.skill-name {
+    width: 100px;
+    font-weight: 500;
+    color: var(--md-primary);
+    font-size: 1rem;
+}
+
+.skill-bar {
+    flex: 1;
+    height: 8px;
+    background-color: var(--md-surface-variant);
+    border-radius: 4px;
+    margin: 0 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.skill-level {
+    height: 100%;
+    background: var(--md-primary);
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
+}
+
+.skill-percentage {
+    width: 40px;
+    text-align: right;
+    font-size: 0.875rem;
+    color: var(--md-on-surface-variant);
+    transition: color var(--transition-speed);
+    font-weight: 500;
+}
+
+.skill-item:hover .skill-percentage {
+    color: var(--md-on-surface);
+}
+
+/* Skill Stack Section - Material Design 3 */
+.stack-item {
+    margin-bottom: 24px;
+    padding: 16px;
+    border-radius: var(--border-radius-small);
+    background-color: var(--md-surface);
+    transition: all var(--transition-speed);
+    border-left: 4px solid transparent;
+    box-shadow: var(--md-elevation-level1);
+    position: relative;
+    overflow: hidden;
+}
+
+.stack-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--md-elevation-level2);
+    border-left-color: var(--md-primary);
+    background-color: var(--md-surface-variant);
+}
+
+.stack-item h3 {
+    margin-bottom: 12px;
+    color: var(--md-primary);
+    font-size: 1.25rem;
+    font-weight: 500;
+    position: relative;
+}
+
+/* Projects Section - Material Design 3 */
+.project-item {
+    margin-bottom: 32px;
+    padding: 24px;
+    border-radius: var(--border-radius-small);
+    background-color: var(--md-surface);
+    transition: all var(--transition-speed);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--md-elevation-level1);
+}
+
+.project-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--md-tertiary);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform var(--transition-speed);
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--md-elevation-level3);
+    background-color: var(--md-surface-variant);
+}
+
+.project-item:hover::before {
+    transform: scaleY(1);
+}
+
+.project-item:last-child {
+    margin-bottom: 0;
+}
+
+.project-item h3 {
+    color: var(--md-primary);
+    margin-bottom: 16px;
+    font-size: 1.25rem;
+    position: relative;
+    padding-bottom: 8px;
+    font-weight: 500;
+}
+
+.project-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 32px;
+    height: 3px;
+    background: var(--md-primary);
+    transition: width var(--transition-speed);
+    border-radius: 1.5px;
+}
+
+.project-item:hover h3::after {
+    width: 64px;
+}
+
+.project-details {
+    margin-top: 16px;
+    padding-left: 16px;
+    border-left: 2px solid var(--md-outline);
+    transition: all var(--transition-speed);
+}
+
+.project-item:hover .project-details {
+    border-left-color: var(--md-primary);
+    background-color: rgba(103, 80, 164, 0.05);
+    border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 16px;
+    margin-right: 16px;
+    padding: 10px 24px;
+    background-color: var(--md-primary);
+    color: var(--md-on-primary);
+    border-radius: var(--border-radius-small);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    text-transform: uppercase;
+    transition: all var(--transition-speed);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: var(--md-elevation-level1);
+}
+
+.project-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: background-color var(--transition-speed);
+    z-index: -1;
+}
+
+.project-link:hover {
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: var(--md-elevation-level2);
+}
+
+.project-link:hover::before {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.project-link:active {
+    transform: translateY(0);
+    box-shadow: var(--md-elevation-level1);
+}
+
+.project-link::after {
+    display: none;
+}
+
+/* Social Media Section - Material Design 3 */
+.social-media {
+    background-color: var(--md-surface-variant);
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-small);
+    margin-top: 16px;
+}
+
+.social-media::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--md-primary) 0%, transparent 70%);
+    opacity: 0.05;
+    border-radius: 50%;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 24px;
+    justify-content: center;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-small);
+    color: var(--md-on-surface);
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all var(--transition-speed);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background-color: var(--md-surface);
+    min-width: 140px;
+    box-shadow: var(--md-elevation-level1);
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: all var(--transition-speed);
+    opacity: 0;
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--md-elevation-level2);
+    text-decoration: none;
+    color: white;
+}
+
+.social-link:hover::before {
+    opacity: 1;
+}
+
+.social-link:active {
+    transform: translateY(0);
+    box-shadow: var(--md-elevation-level1);
+}
+
+.social-link::after {
+    display: none;
+}
+
+.social-link .material-icons {
+    margin-right: 12px;
+    font-size: 1.25rem;
+}
+
+.social-link.twitter::before {
+    background-color: #1DA1F2;
+}
+
+.social-link.linkedin::before {
+    background-color: #0077B5;
+}
+
+.social-link.facebook::before {
+    background-color: #4267B2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    section {
+        padding: 25px;
+    }
+
+    header {
+        padding: 30px 20px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    header .title {
+        font-size: 1.2rem;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .resume-nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .resume-nav a {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+        flex: 1 0 calc(50% - 10px);
+        text-align: center;
+        min-width: 120px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    blockquote {
+        font-size: 1.1rem;
+        padding: 12px 15px;
+    }
+
+    .skill-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .skill-name {
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .skill-bar {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .skill-percentage {
+        width: 100%;
+        text-align: left;
+        margin-top: 5px;
+    }
+
+    .stack-item {
+        padding: 12px;
+    }
+
+    .project-item {
+        padding: 15px;
+    }
+
+    .project-details {
+        padding-left: 10px;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .social-link {
+        justify-content: flex-start;
+        width: 100%;
+    }
+}
+
+/* Dark mode preference - Material Design 3 Dark Theme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Primary colors */
+        --md-primary: #D0BCFF;
+        --md-on-primary: #381E72;
+        --md-primary-container: #4F378B;
+        --md-on-primary-container: #EADDFF;
+
+        /* Secondary colors */
+        --md-secondary: #CCC2DC;
+        --md-on-secondary: #332D41;
+        --md-secondary-container: #4A4458;
+        --md-on-secondary-container: #E8DEF8;
+
+        /* Tertiary colors */
+        --md-tertiary: #EFB8C8;
+        --md-on-tertiary: #492532;
+        --md-tertiary-container: #633B48;
+        --md-on-tertiary-container: #FFD8E4;
+
+        /* Surface colors */
+        --md-surface: #1C1B1F;
+        --md-on-surface: #E6E1E5;
+        --md-surface-variant: #49454F;
+        --md-on-surface-variant: #CAC4D0;
+
+        /* Background colors */
+        --md-background: #1C1B1F;
+        --md-on-background: #E6E1E5;
+
+        /* Error colors */
+        --md-error: #F2B8B5;
+        --md-on-error: #601410;
+        --md-error-container: #8C1D18;
+        --md-on-error-container: #F9DEDC;
+
+        /* Outline colors */
+        --md-outline: #938F99;
+        --md-outline-variant: #49454F;
+
+        /* Shadow colors */
+        --md-shadow: #000000;
+
+        /* Surface tint color */
+        --md-surface-tint: #D0BCFF;
+
+        /* Inverse colors */
+        --md-inverse-surface: #E6E1E5;
+        --md-inverse-on-surface: #313033;
+        --md-inverse-primary: #6750A4;
+
+        /* Legacy variables for compatibility */
+        --primary-color: var(--md-primary);
+        --primary-light: var(--md-primary-container);
+        --primary-dark: var(--md-on-primary-container);
+        --secondary-color: var(--md-secondary);
+        --secondary-light: var(--md-secondary-container);
+        --secondary-dark: var(--md-on-secondary-container);
+        --background-dark: var(--md-background);
+        --background-light: var(--md-surface);
+        --text-primary: var(--md-on-surface);
+        --text-secondary: var(--md-on-surface-variant);
+        --accent-color: var(--md-tertiary);
+
+        /* Complementary colors (mapped to M3) */
+        --complement-primary: var(--md-tertiary);
+        --complement-primary-light: var(--md-tertiary-container);
+        --complement-secondary: var(--md-primary);
+        --complement-secondary-light: var(--md-primary-container);
+    }
+}
+
+/* Light mode preference - Material Design 3 Light Theme */
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Primary colors */
+        --md-primary: #6750A4;
+        --md-on-primary: #FFFFFF;
+        --md-primary-container: #EADDFF;
+        --md-on-primary-container: #21005E;
+
+        /* Secondary colors */
+        --md-secondary: #625B71;
+        --md-on-secondary: #FFFFFF;
+        --md-secondary-container: #E8DEF8;
+        --md-on-secondary-container: #1E192B;
+
+        /* Tertiary colors */
+        --md-tertiary: #7D5260;
+        --md-on-tertiary: #FFFFFF;
+        --md-tertiary-container: #FFD8E4;
+        --md-on-tertiary-container: #370B1E;
+
+        /* Surface colors */
+        --md-surface: #FFFBFE;
+        --md-on-surface: #1C1B1F;
+        --md-surface-variant: #E7E0EC;
+        --md-on-surface-variant: #49454E;
+
+        /* Background colors */
+        --md-background: #FFFBFE;
+        --md-on-background: #1C1B1F;
+
+        /* Error colors */
+        --md-error: #B3261E;
+        --md-on-error: #FFFFFF;
+        --md-error-container: #F9DEDC;
+        --md-on-error-container: #410E0B;
+
+        /* Outline colors */
+        --md-outline: #79747E;
+        --md-outline-variant: #C4C7C5;
+
+        /* Shadow colors */
+        --md-shadow: #000000;
+
+        /* Surface tint color */
+        --md-surface-tint: #6750A4;
+
+        /* Inverse colors */
+        --md-inverse-surface: #313033;
+        --md-inverse-on-surface: #F4EFF4;
+        --md-inverse-primary: #D0BCFF;
+
+        /* Legacy variables for compatibility */
+        --primary-color: var(--md-primary);
+        --primary-light: var(--md-primary-container);
+        --primary-dark: var(--md-on-primary-container);
+        --secondary-color: var(--md-secondary);
+        --secondary-light: var(--md-secondary-container);
+        --secondary-dark: var(--md-on-secondary-container);
+        --background-dark: var(--md-background);
+        --background-light: var(--md-surface);
+        --text-primary: var(--md-on-surface);
+        --text-secondary: var(--md-on-surface-variant);
+        --accent-color: var(--md-tertiary);
+
+        /* Complementary colors (mapped to M3) */
+        --complement-primary: var(--md-tertiary);
+        --complement-primary-light: var(--md-tertiary-container);
+        --complement-secondary: var(--md-primary);
+        --complement-secondary-light: var(--md-primary-container);
+    }
+}
