@@ -1,13 +1,9 @@
-/**
- * Main application module
- * This module initializes all the functionality for the resume website
- */
-
 import { animateSkillBars } from './skillAnimations.js';
 import { setupSmoothScrolling } from './navigation.js';
 import { setupProjectHoverEffects } from './projectEffects.js';
 import { showLinkAddresses } from './linkUtils.js';
 import { setupPdfGeneration } from './pdfGenerator.js';
+import { setupImageCarousels } from './carouselManager.js';
 
 /**
  * Initializes all the functionality for the resume website
@@ -30,4 +26,7 @@ export function initApp() {
 
     // Setup PDF generation functionality
     setupPdfGeneration();
+
+    // Setup image carousels
+    setupImageCarousels();
 }

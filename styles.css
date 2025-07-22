@@ -1039,3 +1039,102 @@ blockquote:hover {
         --complement-secondary-light: var(--md-primary-container);
     }
 }
+
+/* Image Carousel Styles */
+.image-carousel {
+    position: relative;
+    margin-bottom: 16px;
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--md-elevation-level1);
+    overflow: hidden;
+    transition: all var(--transition-speed);
+}
+
+.image-carousel:hover {
+    box-shadow: var(--md-elevation-level2);
+    transform: translateY(-2px);
+}
+
+.carousel-container {
+    display: flex;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius-small);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    z-index: 2;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.image-carousel:hover .carousel-button {
+    opacity: 0.7;
+}
+
+.carousel-button:hover {
+    opacity: 1 !important;
+    background-color: var(--md-primary);
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 2;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: var(--md-primary);
+}
